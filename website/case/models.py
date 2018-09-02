@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Contato(models.Model):
     nome = models.CharField(max_length = 120, verbose_name='Nome')
@@ -8,4 +9,4 @@ class Contato(models.Model):
     email = models.EmailField(max_length = 120, verbose_name='Email')
 
     def get_absolute_url(self):
-            return reverse("cliente:detail", kwargs={"id": self.id})
+        return reverse("contato:contato-detail", kwargs={"id": self.id})

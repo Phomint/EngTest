@@ -12,9 +12,8 @@ from django.views.generic import (
 from .forms import ContatoModelForm
 from .models import Contato
 
-
 class ContatoCreateView(CreateView):
-    template_name = 'case/contato_create.html'
+    template_name = 'contato/contato_create.html'
     form_class = ContatoModelForm
     queryset = Contato.objects.all()
 
@@ -24,12 +23,12 @@ class ContatoCreateView(CreateView):
 
 
 class ContatoListView(ListView):
-    template_name = 'case/contato_list.html'
+    template_name = 'contato/contato_list.html'
     queryset = Contato.objects.all()
 
 
 class ContatoDetailView(DetailView):
-    template_name = 'case/contato_detail.html'
+    template_name = 'contato/contato_detail.html'
 
     def get_object(self):
         id_ = self.kwargs.get("id")
@@ -37,7 +36,7 @@ class ContatoDetailView(DetailView):
 
 
 class ContatoUpdateView(UpdateView):
-    template_name = 'case/contato_create.html'
+    template_name = 'contato/contato_create.html'
     form_class = ContatoModelForm
 
     def get_object(self):
@@ -50,7 +49,7 @@ class ContatoUpdateView(UpdateView):
 
 
 class ContatoDeleteView(DeleteView):
-    template_name = 'case/contato_delete.html'
+    template_name = 'contato/contato_delete.html'
 
     def get_object(self):
         id_ = self.kwargs.get("id")
