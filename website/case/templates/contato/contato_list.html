@@ -1,28 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
-
-
-<div class='col-sm-6 col-sm-offset-3'>
-    <h1>{{ title }}</h1>
+<style>
+  .demo-list-three {
+    width: 1080px;
+  }
+</style>
+<style>
+  #fab {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    z-index: 900;
+  }
+</style>
 <form method='GET' action=''>
 </form>
 {% for obj in object_list %}
-<div class="row">
-  <div class="col-sm-12">
-    <div class="thumbnail">
-        <div class="caption">
-        {% if obj.draft %}<h3>Staff only: Draft</h3>{% endif %} {% if obj.publish > today %}<h3>Staff Only: Future Post</h3>{% endif %}
-        <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a> <small>{{ obj.publish }}</small></h3>
-        {% if obj.user.get_full_name %}<p>Author: {{ obj.user.get_full_name }}</p>{% endif %}
-        <p>{{ obj.content|linebreaks|truncatechars:120 }}</p>
-        <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">Detalhes</a></p>
-      </div>
-    </div>
-  </div>
-<hr/>
-</div>
+<ul class="demo-list-three mdl-list">
+  <li class="mdl-list__item mdl-list__item--three-line">
+    <span class="mdl-list__item-primary-content">
+        <i class="material-icons mdl-list__item-avatar">person</i>
+        <a href='{{ obj.get_absolute_url }}'><span>{{ obj.nome }}</span></a>
+    <span class="mdl-list__item-text-body">
+          {{ obj.celular }} <br>
+          {{ obj.email }}
+        </span>
+    </span>
+
+    <a href="{{ obj.get_absolute_url }}" class="mdl-button mdl-js-button mdl-button--primary">
+  DETALHES
+</a>
+  </li>
+</ul>
 {% endfor %}
 
-</div>
+<a href="" id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-button--primary">
+     <i class="material-icons">person_add</i>
+    </a>
+
 
 {% endblock content %}
