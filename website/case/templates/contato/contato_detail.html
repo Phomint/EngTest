@@ -1,6 +1,51 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Detail</h1>
+<style>
+  #fab {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    z-index: 900;
+  }
+.demo-list-icon {
+  width: 300px;
+}
+</style>
+
+<ul class="demo-list-icon mdl-list">
+  <li class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+    <i class="material-icons mdl-list__item-icon">person</i>
+    {{ object.nome }}
+</span>
+  </li>
+  <li class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+    <i class="material-icons mdl-list__item-icon">call</i>
+    {{ object.celular }}
+  </span>
+  </li>
+
+  <li class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+    <i class="material-icons mdl-list__item-icon">email</i>
+    {{ object.email }}
+  </span>
+  </li>
+  <li class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+    <i class="material-icons mdl-list__item-icon">business</i>
+    {{ object.cargo }} na {{ object.empresa}}
+  </span>
+  </li>
+</ul>
+
+<a href="" id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-button--primary">
+     <i class="material-icons">create</i>
+    </a>
 
 {% endblock %}

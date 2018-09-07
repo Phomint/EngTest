@@ -21,6 +21,9 @@ span, a {
   text-decoration: none !important;
 }
 
+.mdl-mini-footer__link-list{
+  margin-left: 20px;
+}
 .demo-drawer {
   border: none;
 }
@@ -60,5 +63,5 @@ span, a {
 }
 
 .demo-content {
-  max-width: 1080px;
+  max-width: 900px;
 }
