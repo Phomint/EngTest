@@ -2,10 +2,9 @@
 {% block content %}
 <style>
   .demo-list-three {
-    width: 1080px;
+    width: 800px;
+    margin-left: 30px;
   }
-</style>
-<style>
   #fab {
     position: fixed;
     display: block;
@@ -16,6 +15,7 @@
     z-index: 900;
   }
 </style>
+
 <form method='GET' action=''>
 </form>
 {% for obj in object_list %}
@@ -37,7 +37,7 @@
 </ul>
 {% endfor %}
 
-<a href="" id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-button--primary">
+<a href="{% url 'contato:contato-create' %}" id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-button--primary">
      <i class="material-icons">person_add</i>
     </a>
 
