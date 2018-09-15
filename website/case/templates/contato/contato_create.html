@@ -1,9 +1,25 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
 
 {% block content %}
 
-<form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
-  {{ form.as_p }}
+<form method='POST' action='' enctype='multipart/form-data' novalidate>{% csrf_token %}
+
+  {% for hidden_field in form.hidden_fields %}
+  {{ hidden_field.errors }}
+  {{ hidden_field }}
+  {% endfor %}
+
+  {% for field in form.visible_fields %}
+<div class="form-group">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <label class="mdl-textfield__label" >{{ field.label_tag }}</label>
+    {% render_field field class="mdl-textfield__input" %}
+
+  </div>
+</div>
+  {% endfor %}
+
   <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
   Salvar
 </button
