@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #Meus Apps
     'case',
-    #Widget Tweaks
+    #Terceiros
     'widget_tweaks',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
