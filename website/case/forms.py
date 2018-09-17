@@ -8,15 +8,7 @@ class ContatoModelForm(forms.ModelForm):
     celular = forms.CharField(help_text='Incluindo código do pais, exemplo +55011',  widget=forms.TextInput(
             attrs={'placeholder': 'Número do celular'}))
 
-    cargo = forms.CharField(widget=forms.TextInput(
-            attrs={'placeholder': 'Cargo ou profissão'}))
-
-    empresa = forms.CharField(widget=forms.TextInput(
-            attrs={'placeholder': 'Empresa em que trabalha'}))
-
-    email = forms.CharField(widget=forms.TextInput(
-            attrs={'placeholder': 'Email completo'}))
-
+    
     class Meta:
         model = Contato
         fields =['nome','celular','cargo','empresa','email',]
