@@ -1,6 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'contato/contato_detail.html' %}
+{% block dialog %}
 
-{% block content %}
+<form action='.' method='POST'>{% csrf_token %}
+    <dialog class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Deseja excluir?</h4>
+    <div class="mdl-dialog__actions">
+        <a href="{% url 'contato:contato-delete' object.id %}" type="button" class="mdl-button">Sim</a>
+        <button type="button" class="mdl-button close">Cancelar</button>
+    </div>
+</dialog>
+</form>
 
-
-{% endblock %}
+{% endblock dialog %}
