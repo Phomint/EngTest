@@ -31,12 +31,12 @@
     <h2 class="mdl-card__title-text">{{ object.nome }}</h2>
 </div>
 <div class="mdl-layout-spacer"></div>
-<a href="{% url 'contato:contato-delete' object.id %}" id="show-dialog"  class="mdl-button mdl-js-button mdl-button--icon">
+<a id="show-dialog"  class="mdl-button mdl-js-button mdl-button--icon">
   <i class="material-icons">delete</i>
 </a>
-    {% block dialog %}
 
-    {% endblock dialog %}
+{% include "contato/contato_delete.html" %}
+
 <script type="text/javascript" src="{% static 'js/dialog.js' %}"></script>
 
 <div class="mdl-card__actions mdl-card--border">

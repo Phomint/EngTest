@@ -10,4 +10,4 @@ class Contato(models.Model):
     email = models.EmailField(max_length = 120, verbose_name='Email', blank='True')
 
     def get_absolute_url(self):
-        return reverse("contato:contato-detail", kwargs={"id": self.id})
+        return reverse("contato:contato-detail", kwargs={"pk": self.id})
