@@ -1,9 +1,13 @@
-<form action='.' method='post'>{% csrf_token %}
+{% load staticfiles %}
 <dialog class="mdl-dialog">
     <h6>Deseja excluir {{ object.nome }}?</h6>
     <div class="mdl-dialog__actions">
-        <input type="submit" class="mdl-button mdl-js-button mdl-button--accent" value="Excluir">
+        <input id="demo-show-snackbar" type="submit" class="mdl-button mdl-js-button mdl-button--accent" value="Excluir">
         <button type="button" class="mdl-button close">Cancelar</button>
     </div>
 </dialog>
-</form>
+<div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button"></button>
+</div>
+<script type="text/javascript" src="{% static 'js/snackbar.js' %}"></script>
