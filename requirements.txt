@@ -1,4 +1,4 @@
-Django==2.1.2
+Django==2.2.24
 django-phonenumber-field==2.0.1
 django-widget-tweaks==1.4.3
 pytz==2018.5
